@@ -3,7 +3,7 @@ T3Colorbox brings famous Colorbox (jQuery Lightbox) to TYPO3. HTML5 validated an
 
 ---
 
-Originally imported from https://typo3.org/extensions/repository/view/t3colorbox.
+Originally imported from https://typo3.org/extensions/repository/view/t3colorbox.  
 Thanks to **A.L. Datenverarbeitung** for this great extension.
 
 Tested and working on TYPO3 7.6.9.
