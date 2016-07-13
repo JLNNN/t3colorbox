@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Locallang file for use in Colorbox Javascript</description>
+        <authorName>Thomas Lampret</authorName>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="image">Image </label>
+            <label index="of"> of </label>
+            <label index="slideshowstart">Start Slideshow</label>
+            <label index="slideshowstop">Stop Slideshow</label>
+            <label index="previous">previous</label>
+            <label index="next">next</label>
+            <label index="close">close</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+			<label index="image">Bild </label>
+            <label index="of"> von </label>
+            <label index="slideshowstart">Slideshow starten</label>
+            <label index="slideshowstop">Slideshow anhalten</label>
+            <label index="previous">vor</label>
+            <label index="next">zurück</label>
+            <label index="close">schliessen</label>
+        </languageKey>
+        <languageKey index="fr" type="array">
+            <label index="image">Image </label>
+            <label index="of"> sur </label>
+            <label index="slideshowstart">Lancer le diaporama</label>
+            <label index="slideshowstop">Arrêter le diaporama</label>
+            <label index="previous">précédente</label>
+            <label index="next">suivante</label>
+            <label index="close">fermer</label>
+        </languageKey>
+        <languageKey index="nl" type="array">
+            <label index="image">Afbeelding </label>
+            <label index="of"> van </label>
+            <label index="slideshowstart">Start Slideshow</label>
+            <label index="slideshowstop">Stop Slideshow</label>
+            <label index="previous">vorige</label>
+            <label index="next">volgende</label>
+            <label index="close">sluit</label>
+        </languageKey>
+        <languageKey index="dk" type="array">
+            <label index="image">billede </label>
+            <label index="of"> af </label>
+            <label index="slideshowstart">Start slideshow</label>
+            <label index="slideshowstop">Stop slideshow</label>
+            <label index="previous">forrige</label>
+            <label index="next">næste</label>
+            <label index="close">luk</label>
+        </languageKey>
+        <languageKey index="cs" type="array">
+            <label index="image"></label>
+            <label index="of">. obrázek z </label>
+            <label index="slideshowstart">Obsah se nepodařilo načíst.</label>
+            <label index="slideshowstop">Obrázek se nepodařilo načíst.</label>
+            <label index="previous">Předchozí</label>
+            <label index="next">Následující</label>
+            <label index="close">Zavřít</label>
+        </languageKey>
+        <languageKey index="es" type="array">
+            <label index="Imagen"></label>
+            <label index="of"> de </label>
+            <label index="slideshowstart">Start Slideshow</label>
+            <label index="slideshowstop">Stop Slideshow</label>
+            <label index="previous">Anterior</label>
+            <label index="next">Siguiente</label>
+            <label index="close">Cerrar</label>
+        </languageKey>
+        <languageKey index="it" type="array">
+            <label index="image">Immagine </label>
+            <label index="of"> di </label>
+            <label index="slideshowstart">Start Slideshow</label>
+            <label index="slideshowstop">Stop Slideshow</label>
+            <label index="previous">Precedente</label>
+            <label index="next">Successiva</label>
+            <label index="close">Chiudi</label>
+        </languageKey>
+        <languageKey index="pl" type="array">
+            <label index="image"></label>
+            <label index="of">. obrazek z </label>
+            <label index="slideshowstart">rozpocznij pokaz slajdów</label>
+            <label index="slideshowstop">zatrzymaj pokaz slajdów</label>
+            <label index="previous">Poprzedni</label>
+            <label index="next">Następny</label>
+            <label index="close">Zamknij</label>
+        </languageKey>
+        <languageKey index="ru" type="array">
+            <label index="image">изображение </label>
+            <label index="of"> из </label>
+            <label index="slideshowstart">начать слайд-шоу</label>
+            <label index="slideshowstop">остановить слайд-шоу</label>
+            <label index="previous">предыдущее</label>
+            <label index="next">следующее</label>
+            <label index="close">закрыть</label>
+        </languageKey>
+        <languageKey index="pt-BR" type="array">
+            <label index="image">Imagem </label>
+            <label index="of"> de </label>
+            <label index="slideshowstart">iniciar apresentação de slides</label>
+            <label index="slideshowstop">parar apresentação de slides</label>
+            <label index="previous">Anterior</label>
+            <label index="next">Próxima</label>
+            <label index="close">Fechar</label>
+        </languageKey>
+		</data>
+</T3locallang>

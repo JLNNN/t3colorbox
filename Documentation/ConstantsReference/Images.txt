@@ -1,0 +1,5 @@
+﻿.. |img-9|      image:: Constants_Editor.png
+.. :align: left
+.. :border: 0
+.. :name: Grafik9
+.. :width: 100%

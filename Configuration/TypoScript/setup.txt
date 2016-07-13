@@ -1,0 +1,134 @@
+page.includeCSS {
+  t3colorbox10 = EXT:t3colorbox/Resources/Public/Css/{$plugin.t3colorbox.cboxversion}/example{$plugin.t3colorbox.theme}/colorbox.css
+  t3colorbox10.insertData = 1
+  t3colorbox10.if.isFalse = {$plugin.t3colorbox.themepath}
+  t3colorbox60 = {$plugin.t3colorbox.themepath}
+  t3colorbox60.insertData = 1
+  t3colorbox60.if.isTrue = {$plugin.t3colorbox.themepath}
+}
+
+page.includeJSFooterlibs {
+  t3colorbox50 = EXT:t3colorbox/Resources/Public/JavaScript/jquery-1.11.1.js
+  t3colorbox50.forceOnTop = 1
+  t3colorbox50.if.isTrue = {$plugin.t3colorbox.includejquerycore}
+  t3colorbox60 = EXT:t3colorbox/Resources/Public/JavaScript/jquery.colorbox-{$plugin.t3colorbox.cboxversion}.min.js
+  t3colorbox60.insertData = 1
+}
+
+plugin.t3colorbox.setup {
+  100 = TEXT
+  100.value = jQuery('.t3colorbox').colorbox({opacity:false,
+                                             // opacity set in css
+// text localization
+  // Image {x} of {count}
+  200 = TEXT
+  200.value = current:"{current}
+  220 = TEXT
+  220.value = {LLL:EXT:t3colorbox/locallang.xml:of}
+  220.insertData = 1
+  230 = TEXT
+  230.value = {total}",
+  // Colorbox controls
+  // previous
+  240 = TEXT
+  240.value = previous:"{LLL:EXT:t3colorbox/locallang.xml:previous}",
+  240.insertData = 1
+  240.if.value = {$plugin.t3colorbox.theme}
+  240.if.isLessThan = "6"
+  // next
+  250 = TEXT
+  250.value = next:"{LLL:EXT:t3colorbox/locallang.xml:next}",
+  250.insertData = 1
+  250.if.value = {$plugin.t3colorbox.theme}
+  250.if.isLessThan = "6"
+  // close
+  260 = TEXT
+  260.value = close:"{LLL:EXT:t3colorbox/locallang.xml:close}",
+  260.insertData = 1
+  260.if.value = {$plugin.t3colorbox.theme}
+  260.if.isLessThan = "6"
+  // slideshowStart
+  270 = TEXT
+  270.value = slideshowStart:"{LLL:EXT:t3colorbox/locallang.xml:slideshowstart}",
+  270.insertData = 1
+  270.if.value = {$plugin.t3colorbox.theme}
+  270.if.isLessThan = "6"
+  // slideshowStop
+  280 = TEXT
+  280.value = slideshowStop:"{LLL:EXT:t3colorbox/locallang.xml:slideshowstop}",
+  280.insertData = 1
+  280.if.value = {$plugin.t3colorbox.theme}
+  280.if.isLessThan = "6"
+  // all nav values for theme 6
+  290 = TEXT
+  290.value = close:"<i class='fa fa-times'></i>",next:"<i class='fa fa-chevron-right'></i>",previous:"<i class='fa fa-chevron-left'></i>",slideshowStart:"Slideshow <i class='fa fa-forward'></i>",slideshowStop:"Slideshow <i class='fa fa-pause'></i>",
+  290.if.value = {$plugin.t3colorbox.theme}
+  290.if.equals = 6
+
+
+// slideshow options
+  300 = TEXT
+  300.value = slideshow:{$plugin.t3colorbox.slideshow},
+  300.insertData = 1
+  300.if.isTrue = {$plugin.t3colorbox.slideshow}
+  310 = TEXT
+  310.value = slideshowAuto:{$plugin.t3colorbox.slideshowAuto},
+  310.insertData = 1
+  310.if.isTrue = {$plugin.t3colorbox.slideshowAuto}
+  320 = TEXT
+  320.value = slideshowSpeed:{$plugin.t3colorbox.slideshowSpeed},
+  320.insertData = 1
+  320.if.isTrue = {$plugin.t3colorbox.slideshowSpeed}
+
+// max Dimensions
+  340 = TEXT
+  340.value = maxWidth:"{$plugin.t3colorbox.maxWidth}",
+  340.insertData = 1
+  340.if.isTrue = {$plugin.t3colorbox.maxWidth}
+  350 = TEXT
+  350.value = maxHeight:"{$plugin.t3colorbox.maxHeight}",
+  350.insertData = 1
+  350.if.isTrue = {$plugin.t3colorbox.maxHeight}
+
+// group per page / group per ce / empty = single
+  500 = TEXT
+  500.value = rel:"t3colorbox",
+  500.if.value = {$plugin.t3colorbox.imagegroup}
+  500.if.equals = 1
+  510 = TEXT
+  510.value = rel:function() { return $(this).data('rel')},
+  510.if.value = {$plugin.t3colorbox.imagegroup}
+  510.if.equals = 2
+
+// custom commands
+  900 = TEXT
+  900.value = {$plugin.t3colorbox.cboxcommand}
+  900.insertData = 1
+  900.if.isTrue = {$plugin.t3colorbox.cboxcommand}
+
+// closing 100.
+  910 = TEXT
+  910.value = })
+
+// reload on orientation change (mobile devices)
+//  990 = TEXT
+//  990.value = if (!window.addEventListener){window.attachEvent("orientationchange",function(){if($('#cboxOverlay').is(':visible')){$.colorbox.load(true);}},false);}else{window.addEventListener("orientationchange",function(){if($('#cboxOverlay').is(':visible')){$.colorbox.load(true);}},false);}
+}
+page.jsFooterInline < plugin.t3colorbox.setup
+
+/*
+modify imagelinks in lib.fluidContent and RTE
+*/
+// images in content elements
+lib.fluidContent.settings.media.popup {
+  JSwindow = 0
+  directImageLink = 1
+  linkParams.ATagParams.dataWrap = class="t3colorbox" data-rel="cbox{field:uid}"
+}
+
+// images in RTE
+lib.parseFunc_RTE.tags.img.postUserFunc.imageLinkWrap {
+  JSwindow = 0
+  directImageLink = 1
+  linkParams.ATagParams.dataWrap = class="t3colorbox" data-rel="cbox{field:uid}"
+}

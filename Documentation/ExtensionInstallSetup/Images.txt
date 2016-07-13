@@ -1,0 +1,6 @@
+﻿.. |img-8|      image:: include_static_template.gif
+.. :align: left
+.. :border: 0
+.. :name: Grafik6
+.. :width: 665px
+

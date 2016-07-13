@@ -1,0 +1,191 @@
+// The following Bootstrap3 less files are necessary to compile this file
+//@import (reference) "variables.less";
+//@import (reference) "mixins.less";
+//@import (reference) "scaffolding.less";
+
+// for use with font-awesome
+//@import (reference) "fa/font-awesome.less";
+
+/* include FontAwesome icon-font and necessary styles
+@font-face {
+	font-family:'FontAwesome';src:url('fonts/fontawesome-webfont.eot?v=4.1.0');src:url('fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),url('fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),url('fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),url('fonts//fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+.fa {
+	display:inline-block;
+	font-family:FontAwesome;
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
+}
+.fa-times:before{content:"\f00d"}
+.fa-chevron-left:before{content:"\f053"}
+.fa-chevron-right:before{content:"\f054"}
+.fa-forward:before{content:"\f04e"}
+
+*/
+
+// custom values
+@colorbox-bgcolor: #000;
+@colorbox-textcolor: #ccc;
+@colorbox-border: 0;
+@colorbox-margin: @line-height-computed * 2;
+
+/*
+    colorbox Version: 1.5.12
+    Colorbox Core Style:
+                   The following CSS should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+}
+#cboxWrapper {max-width: none;}
+#cboxOverlay {
+    position:fixed;
+    width: 100%;
+    height: 100%;
+}
+#cboxMiddleLeft,
+#cboxBottomLeft {clear: left;}
+#cboxContent {position: relative;}
+#cboxLoadedContent {overflow: auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle {margin: 0;}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { cursor:pointer; }
+/*  not used in t3colorbox
+    .cboxPhoto {float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+    .cboxIframe {width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
+*/
+#colorbox, #cboxContent, #cboxLoadedContent {box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+    background:@colorbox-bgcolor;
+    .opacity(0.9);
+}
+// or a gradient
+// #cboxOverlay{#gradient > .radial(@inner-color: #222; @outer-color: #000;);}
+
+    #cboxWrapper { 
+    background: @colorbox-bgcolor;
+}
+#cboxContent {
+    margin: (@colorbox-margin * 1.2) @colorbox-margin;
+    color: @colorbox-textcolor;
+}
+
+/* not used in t3colorbox
+    .cboxIframe{background:#fff;}
+    #cboxError{padding:50px; border:1px solid #ccc;}
+*/
+
+#cboxLoadingGraphic {
+    width: @colorbox-margin;
+    height: @colorbox-margin;
+    top: 49%;
+    left: 49%;
+    background: none;
+    color: darken(@colorbox-textcolor, 20%);
+    font-size: @font-size-large;
+    text-shadow: @carousel-text-shadow;
+	vertical-align: middle;
+//	.fa-spin  //  !! resource consuming  !!
+}
+#cboxLoadingGraphic:before {
+    font-family:"FontAwesome";
+    content:"\f110"; // fa-spinner
+
+//    font-family:"Glyphicons Halflings";
+//    content:"\e031";
+}
+
+#cboxLoadedContent {
+    .img-rounded;
+//    border: @colorbox-border solid @colorbox-textcolor;
+}
+#cboxTitle {
+    position: absolute;
+    top: -@line-height-computed * 1.6;
+    left: 0;
+    width: 100%;
+    font-size: @font-size-large;
+    text-align: center;
+}
+#cboxCurrent {
+    position: absolute;
+    bottom: -@line-height-computed * 1.6;
+    left: 0;
+}
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles  => moved down
+ #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none;}
+*/
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+
+#cboxSlideshow,
+#cboxPrevious,
+#cboxNext,
+#cboxClose {
+    position: absolute;
+    display: block;
+    width: @colorbox-margin;
+    height: @colorbox-margin;
+    border:0;
+    padding:0;
+    margin:0;
+    overflow:visible;
+    background:none;
+    color: darken(@colorbox-textcolor, 20%);
+    font-size: @font-size-large;
+    text-shadow: @carousel-text-shadow;
+	vertical-align: middle;
+}
+
+#cboxSlideshow {
+    bottom: -@colorbox-margin;
+    right: 0;
+    width: auto;
+    font-size: @font-size-base;
+}
+#cboxPrevious {
+    top: 50%;
+    left: -@line-height-computed * 2;
+}
+#cboxNext {
+    top: 50%;
+    right: -@line-height-computed * 2;
+}
+#cboxClose {
+    top: -@line-height-computed * 2;
+    right: -@line-height-computed * 2;
+}
+
+#cboxSlideshow:hover,
+#cboxPrevious:hover,
+#cboxNext:hover,
+#cboxClose:hover { color: lighten(@colorbox-textcolor, 20%); }
+

@@ -1,0 +1,34 @@
+plugin.t3colorbox {
+	# cat=plugin.t3colorbox/enable/010; type=boolean; label=Include jQuery core: Add jQuery core script. Turn it off (0), if you use t3jquery or jQuery is already added.
+	includejquerycore = 1
+
+	# cat=plugin.t3colorbox/enable/030; type=options[1,2,3,4,5,6]; label=Which theme for the lightbox: 1=theme1 (2=theme2 ...) [ examples: http://www.jacklmoore.com/colorbox ] For a custom style use next option!
+	theme = 1
+
+	# cat=plugin.t3colorbox/enable/040; type=string; label=Path/file for custom CSS:If set, this style (Css file) will be used. Put something like "fileadmin/layout/colorbox/mystyle.css" in here. The value above (plugin.t3colorbox.style) is deactivated. To reactivate the built-in styles you have to delete this constant!
+	themepath =
+	
+	# cat=plugin.t3colorbox/enable/050; type=boolean; label=Enable slideshow switch:Images will be presented in an autoscrolling slideshow.
+	slideshow =
+
+	# cat=plugin.t3colorbox/enable/070; type=options[true,false]; label=Start the slideshow automatically:"Enable slideshow" must be on of course... Set to false to turn off the automatic start.
+	slideshowAuto = false
+
+	# cat=plugin.t3colorbox/enable/060; type=integer; label=Sets the speed of the slideshow:in milliseconds (standard: 2500)
+	slideshowSpeed =
+	
+	# cat=plugin.t3colorbox/enable/090; type=options[1,2,3]; label=Define the use of imagegroups:1=group per page (cycle through all lightbox-images on the page), 2=group per contentelement, 3=single image (no back forward)
+	imagegroup = 1
+
+	# cat=plugin.t3colorbox/dims/080; type=string; label=Maximum width of the lightbox:Set a maximum width for loaded content. px or %
+	maxWidth = 95%
+
+	# cat=plugin.t3colorbox/dims/090; type=string; label=Maximum height of the lightbox:Set a maximum height for loaded content. px or %
+	maxHeight = 95%
+
+	# cat=plugin.t3colorbox/advanced/010; type=string; label=Colorbox command(s):See http://www.jacklmoore.com/colorbox Settings. If you add more than one value don't forget the dash: (opacity:0.45,slideshowSpeed:1000)
+	cboxcommand =
+
+	# cat=plugin.t3colorbox/advanced/020; type=options[1.5.13,1.4.37,1.3.34]; label=Version of the colorbox:standard = latest (which is ok in most cases...)
+	cboxversion = 1.5.13
+}
