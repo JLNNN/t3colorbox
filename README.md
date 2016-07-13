@@ -8,12 +8,11 @@ Thanks to **A.L. Datenverarbeitung** for this great extension.
 
 Tested and working on TYPO3 7.6.9.
 
-## NOTE
-This extension is NOT working under TYPO3 6.x!
-
 ---
 
 ## Changelog
 > **13.07.2016**  
 - added TYPO3 7.6 compatibility
 - updated jQuery to v2.2.4
+- readded TYPO3 6.2 compatibility (css_styled_content)
+- added title attribute to links
