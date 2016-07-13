@@ -8,6 +8,9 @@ Thanks to **A.L. Datenverarbeitung** for this great extension.
 
 Tested and working on TYPO3 7.6.9.
 
+## NOTE
+This extension is NOT working under TYPO3 6.x!
+
 ---
 
 ## Changelog

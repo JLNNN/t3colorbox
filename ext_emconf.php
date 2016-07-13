@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Colorbox (jQuery lightbox)',
 	'description' => 'T3Colorbox brings famous Colorbox (jQuery Lightbox) to TYPO3. HTML5 validated and with 6 different Layouts included. Slideshow can be enabled. Use it standalone or with ext:t3jQuery. Fully customizable with Typoscript. Supports different languages and individual labels.',
 	'category' => 'fe',
-	'version' => '3.0.0',
+	'version' => '3.0.1',
 	'state' => 'stable',
 	'uploadfolder' => false,
 	'createDirs' => '',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = array (
 	array (
 		'depends' =>
 		array (
-			'typo3' => '6.2.0-7.6.99',
+			'typo3' => '7.6.0-7.6.99',
 		),
 		'conflicts' =>
 		array (
